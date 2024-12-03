@@ -13,6 +13,7 @@
         "packagesPath": "C:\\Users\\htndi\\.nuget\\packages\\",
         "outputPath": "D:\\Workspace\\.net\\asp_api\\Laptop\\api\\api\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "C:\\Users\\htndi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

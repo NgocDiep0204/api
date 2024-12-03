@@ -20,7 +20,7 @@ namespace api.Controllers
         public async Task<IActionResult> GetCart(string userId)
         {
             var cart = _context.Orders.Where(o => o.UserId == userId);
-            return Ok();
+            return Ok(cart);
         }
         
     }
