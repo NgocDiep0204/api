@@ -48,7 +48,7 @@ namespace api.Controllers
             var result = await _signInManager.CheckPasswordSignInAsync(user, loginDTO.Password, false);
             if (result.Succeeded)
             {
-                return Ok();
+                return Ok(user.UserName);
             }
             return BadRequest("Invalid username or password");
         }
