@@ -10,7 +10,7 @@ public class Product
     public required string BrandId { get; set; }
     public string? ProductDescription { get; set; }
     public decimal ProductPrice { get; set; }
-    public byte[]? ProductImage { get; set; }
+    public string? ProductImage { get; set; }
     public string? Ram { get; set; }
     public string? Color { get; set; }
     public string? ScreenSize { get; set; }

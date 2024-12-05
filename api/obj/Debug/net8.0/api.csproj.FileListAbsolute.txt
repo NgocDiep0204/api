@@ -258,3 +258,4 @@ D:\Workspace\.net\asp_api\Laptop\api\api\bin\Debug\net8.0\Microsoft.IdentityMode
 D:\Workspace\.net\asp_api\Laptop\api\api\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\Workspace\.net\asp_api\Laptop\api\api\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 D:\Workspace\.net\asp_api\Laptop\api\api\obj\Debug\net8.0\api.sourcelink.json
+D:\Workspace\.net\asp_api\Laptop\api\api\bin\Debug\net8.0\CloudinaryDotNet.dll
