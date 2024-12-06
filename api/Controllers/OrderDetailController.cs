@@ -20,7 +20,7 @@ namespace api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddCartDetail(OrderDetailDTO orderDetail)
         {
-            var orderExists = _context.OrderDetails.SingleOrDefault(f => f.ProductId == orderDetail.ProductId);
+            var orderExists = _context.OrderDetails.FirstOrDefault( f => f.OrderId == orderDetail.OrderId && f.ProductId == orderDetail.ProductId);
             if (orderExists != null) return StatusCode(StatusCodes.Status409Conflict);
             var product = _context.Products.SingleOrDefault(f => f.ProductId == orderDetail.ProductId);
             
@@ -41,11 +41,8 @@ namespace api.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateCartDetail(OrderDetailDTO orderDetail)
         {
-            var quantityProduct = _context.Products.SingleOrDefault(f => f.ProductId == orderDetail.ProductId);
-            if (quantityProduct == null || quantityProduct.Quantity <= 0)
-            {
-                return StatusCode(StatusCodes.Status409Conflict);
-            }
+            var quantityProduct = _context.Products.FirstOrDefault(f => f.ProductId == orderDetail.ProductId);
+            
             var existCartDetail = _context.OrderDetails.FirstOrDefault(x => x.OrderId == orderDetail.OrderId && x.ProductId == orderDetail.ProductId);
             if (existCartDetail == null)
             {
@@ -98,7 +95,7 @@ namespace api.Controllers
             var existOrderDetail = _context.OrderDetails.FirstOrDefault(x => x.OrderId == orderId && x.ProductId == productId);
             if(existOrderDetail == null) return StatusCode(StatusCodes.Status404NotFound);
             _context.OrderDetails.Remove(existOrderDetail);
-            return await _context.SaveChangesAsync()  > 0 ?  StatusCode(StatusCodes.Status201Created) : StatusCode(StatusCodes.Status500InternalServerError);
+            return await _context.SaveChangesAsync()  > 0 ?  StatusCode(StatusCodes.Status200OK) : StatusCode(StatusCodes.Status500InternalServerError);
         }
 
     }
